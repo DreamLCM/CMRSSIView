@@ -12,6 +12,7 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "CMRSSIView")
+            name: "CMRSSIView",
+            path: ".")
     ]
 )
