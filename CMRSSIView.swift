@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CMRSSIView: UIView {
+public class CMRSSIView: UIView {
 
     /// 信号线数目
     public var rssiBackLineCount = 5 {
@@ -45,7 +45,7 @@ class CMRSSIView: UIView {
         backgroundColor = UIColor.white        
     }
     
-    required init?(coder: NSCoder) {
+    required public init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
@@ -54,7 +54,7 @@ class CMRSSIView: UIView {
 // 信号线
 extension CMRSSIView {
     
-    override func draw(_ rect: CGRect) {
+    public override func draw(_ rect: CGRect) {
         guard let context = UIGraphicsGetCurrentContext() else {
             return
         }
