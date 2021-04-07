@@ -34,7 +34,7 @@ public class CMRSSIView: UIView {
         }
     }
     
-    var countLine = 0 {
+    public var countLine = 0 {
         didSet {
             setNeedsDisplay()
         }
