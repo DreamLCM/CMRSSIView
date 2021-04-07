@@ -12,7 +12,6 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "CMRSSIView",
-            dependencies: []),
+            name: "CMRSSIView")
     ]
 )
