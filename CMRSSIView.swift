@@ -64,20 +64,25 @@ public class CMRSSIView: UIView {
 extension CMRSSIView {
     
     public override func draw(_ rect: CGRect) {
-        guard let context = UIGraphicsGetCurrentContext() else {
-            return
-        }
+//        guard let context = UIGraphicsGetCurrentContext() else {
+//            return
+//        }
         for i in 0..<rssiBackLineCount {
             let xPadding = (frame.width)/CGFloat(rssiBackLineCount)*CGFloat(i)+2
             let yPadding = frame.height/paddingBase - frame.height/paddingBase/CGFloat(rssiBackLineCount)*CGFloat(i)
             let linePath = UIBezierPath()
+            linePath.lineWidth = widthLine
             linePath.move(to: CGPoint(x: xPadding, y: frame.height))
             linePath.addLine(to: CGPoint(x: xPadding, y:yPadding))
             linePath.lineCapStyle = .round
-            linePath.lineWidth = widthLine
-            context.addPath(linePath.cgPath)
-            i < countLine ? context.setStrokeColor(colorLine.cgColor) : context.setStrokeColor(colorLineBack.cgColor)
-            context.strokePath()
+            i < countLine ? colorLine.setStroke() : colorLineBack.setStroke()
+            linePath.stroke()
+            
+            //            context.setLineCap(.round)
+            //            context.addPath(linePath.cgPath)
+            //            i < countLine ? context.setStrokeColor(colorLine.cgColor) : context.setStrokeColor(colorLineBack.cgColor)
+            //            context.setLineWidth(widthLine)
+            //            context.strokePath()
         }
     }
     
