@@ -33,8 +33,16 @@ public class CMRSSIView: UIView {
             setNeedsDisplay()
         }
     }
-    
+
+    /// 高亮的信号线数目
     public var countLine = 0 {
+        didSet {
+            setNeedsDisplay()
+        }
+    }
+
+    /// 信号线宽度
+    public var widthLine:CGFloat = 1 {
         didSet {
             setNeedsDisplay()
         }
@@ -66,7 +74,7 @@ extension CMRSSIView {
             linePath.move(to: CGPoint(x: xPadding, y: frame.height))
             linePath.addLine(to: CGPoint(x: xPadding, y:yPadding))
             linePath.lineCapStyle = .round
-            linePath.lineWidth = 5
+            linePath.lineWidth = widthLine
             context.addPath(linePath.cgPath)
             i < countLine ? context.setStrokeColor(colorLine.cgColor) : context.setStrokeColor(colorLineBack.cgColor)
             context.strokePath()
