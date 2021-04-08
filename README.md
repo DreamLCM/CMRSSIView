@@ -6,3 +6,6 @@ Swift5.0贝塞尔曲线的一个画法，小小demo，
 提供了一个思路，有需要其他的私信我，我努力
 麻雀虽小，这里面既包含了贝塞尔曲线的基础api，
 还包含了个人对SwiftPackageManage的理解制作
+
+
+SPM Address = "https://github.com/DreamLCM/CMRSSIView.git"
