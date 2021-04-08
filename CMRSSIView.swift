@@ -66,7 +66,7 @@ extension CMRSSIView {
             linePath.move(to: CGPoint(x: xPadding, y: frame.height))
             linePath.addLine(to: CGPoint(x: xPadding, y:yPadding))
             linePath.lineCapStyle = .round
-            linePath.lineWidth = 2
+            linePath.lineWidth = 5
             context.addPath(linePath.cgPath)
             i < countLine ? context.setStrokeColor(colorLine.cgColor) : context.setStrokeColor(colorLineBack.cgColor)
             context.strokePath()
